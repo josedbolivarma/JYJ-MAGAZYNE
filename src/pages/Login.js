@@ -7,6 +7,7 @@ import styles from "../styled/Login.module.scss"
 import { motion } from 'framer-motion'
 import logologin from "../styled/Images/login.png"
 import { loginEmailPassAsync, loginGoogle } from '../redux/actions/actionLogin'
+import googleIcon from "../styled/Images/google.png"
 
 const SignupSchema = Yup.object().shape({
   email: Yup.string().email('Ingrese un correo válido').required('Este campo es obligatorio'),
@@ -93,7 +94,7 @@ const Login = () => {
 
         <div className={styles.login_social__btn}>
           <button style={{ backgroundColor: '#db4a39' }} onClick={handleGoogle}>
-            <i className='fa-brands fa-google'></i>
+            <img src={googleIcon} alt='google' />
           </button>
         </div>
 
