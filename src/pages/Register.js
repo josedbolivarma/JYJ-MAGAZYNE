@@ -3,10 +3,10 @@ import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
-import { registerAsync } from '../Redux/actions/actionRegister';
-import styles from "../Styles/Login.module.scss";
+import styles from "../styled/Login.module.scss"
 import { motion } from 'framer-motion';
-import logologin from "../Styles/Images/login.png"
+import logologin from "../styled/Images/login.png"
+import { registerAsync } from '../redux/actions/actionRegister';
 
 //VALIDACIONES DE CADA INPUT
 const SignupSchema = Yup.object().shape({

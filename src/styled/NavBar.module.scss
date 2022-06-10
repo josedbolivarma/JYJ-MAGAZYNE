@@ -14,7 +14,7 @@
 .nav_label {
     display: none;
     cursor: pointer;
-
+    border: 2px solid transparent;
     img {
         width: 30px;
         height: 30px;
@@ -58,7 +58,7 @@
 
 .nav_options {
     margin-right: 50px;
-    width: 500px;
+    width: 200px;
     display: flex;
     justify-content: space-between;
     left: -200vw;
@@ -89,14 +89,26 @@
         font-weight: bold;
         transition: 0.3s all ease-in-out;
         color: #170939;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         &:hover {
             transform: scale(1.05);
         }
 
-        i {
-            font-size: 26px;
-            color: #170939;
+        img {
+            width: 45px;
+            height: 45px;
+        }
+    }
+
+    button {
+        background-color: transparent;
+        border: none;
+        img {
+            width: 30px;
+            height: 30px;
         }
     }
 }

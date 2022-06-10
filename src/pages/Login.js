@@ -3,10 +3,10 @@ import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { Field, Form, Formik } from 'formik'
 import * as Yup from 'yup'
-import { loginEmailPassAsync, loginGoogle } from '../Redux/actions/actionLogin'
-import styles from '../Styles/Login.module.scss'
+import styles from "../styled/Login.module.scss"
 import { motion } from 'framer-motion'
-import logologin from '../Styles/Images/login.png'
+import logologin from "../styled/Images/login.png"
+import { loginEmailPassAsync, loginGoogle } from '../redux/actions/actionLogin'
 
 const SignupSchema = Yup.object().shape({
   email: Yup.string().email('Ingrese un correo válido').required('Este campo es obligatorio'),

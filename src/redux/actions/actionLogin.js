@@ -1,9 +1,8 @@
 import { getAuth, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth"
 import Swal from "sweetalert2"
-import { google } from "../../Firebase/credentials"
+import { google } from "../../firebase/firebaseConfig"
+
 import { typesLogin } from "../types/types"
-
-
 
 //Logout
 export const logoutAsync = () => {

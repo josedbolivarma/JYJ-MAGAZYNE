@@ -5,9 +5,12 @@ import closeIcon from "../styled/Images/equis.png";
 import barIcon from "../styled/Images/menu.png";
 import logoutIcon from "../styled/Images/logout.png";
 import cartIcon from "../styled/Images/cart.png";
+import { logoutAsync } from "../redux/actions/actionLogin";
+import { useDispatch } from "react-redux";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const dispatch = useDispatch();
 
   const handleMenu = () => {
     const bar = document.getElementById('bar')
@@ -39,24 +42,17 @@ const Header = () => {
           <Link to="/"><h1>E-COMMERCE</h1></Link>
         </div>
         <input type="checkbox" id="check" className={styles.nav_menu} />
-        <label
-          htmlFor="check"
-          className={styles.nav_label}
-          onClick={() => handleMenu()}>
+        <label htmlFor="check" className={styles.nav_label} onClick={() => handleMenu()}>
           <img src={barIcon} alt="bar" id="bar" />
           <img src={closeIcon} alt="close" id="close" />
-
-          {/* <i className="fa-solid fa-bars" id="bar"></i>
-          <i className="fa-solid fa-xmark" id="close"></i> */}
         </label>
         <div className={styles.nav_options} id="nav_options">
           <Link onClick={() => handleClose()} to="/">
             <img src={cartIcon} />
           </Link>
-          <Link onClick={() => handleClose()} to="/">
+          <button onClick={() => dispatch(logoutAsync())}>
             <img src={logoutIcon} />
-          </Link>
-          <button>Sing Out</button>
+          </button>
         </div>
       </nav>
     </div>
