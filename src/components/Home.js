@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { listAsync } from '../redux/actions/actionProducts'
+import styles from "../styled/Home.module.scss";
+import Card from './Card';
 
 const Home = () => {
 
@@ -18,7 +20,7 @@ const Home = () => {
       {
         products.map(product => (
           <div key={product.nombre}>
-            <h1>{product.nombre}</h1>
+            <Card product={product} />
           </div>
         ))
       }
