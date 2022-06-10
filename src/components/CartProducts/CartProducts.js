@@ -27,7 +27,6 @@ const CartProducts = ({ id, image, nombre, precio }) => {
         </p>
         <div>
         <ButtonPrincipal onClick={removeFromCart}>Remove</ButtonPrincipal>
-
         </div>
       </div>
     </div>
