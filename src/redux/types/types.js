@@ -14,7 +14,11 @@ export const typesProductos = {
 }
 
 export const typesShoppingCart = {
-  add: 'add [SHOPPING CART]',
-  remove: 'remove [SHOPPING CART]',
-  list: 'get [SHOPPING CART]',
+    add: 'add [SHOPPING CART]',
+    remove: 'remove [SHOPPING CART]',
+    list: 'get [SHOPPING CART]'
+}
+
+export const typesModal = {
+    selected: 'selected [MODAL]'
 }

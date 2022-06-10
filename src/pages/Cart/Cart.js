@@ -11,7 +11,7 @@ import CartProducts from '../../components/CartProducts/CartProducts';
 
 const Cart = () => {
   const { cart } = useSelector((store) => store.cart);
-
+  console.log('CART ', cart);
   return (
     <div className={styles.cart}>
     <div className={styles.cart__container}>
