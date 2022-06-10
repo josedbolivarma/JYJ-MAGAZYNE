@@ -1,15 +1,9 @@
 import React, { useEffect, useState } from "react";
-
-// Material UI
-import {
-  ButtonPrincipal,
-  GrayLightTypographyStyled,
-} from "../../styled/styledcomponents";
 import { useDispatch, useSelector } from "react-redux";
 import ReactImageMagnify from "react-image-magnify";
-import { formatoCOP } from "../../utils/Moneda";
-
 import styles from './Details.module.scss';
+import { ButtonPrincipal, GrayLightTypographyStyled } from "../../styled/styledcomponents";
+import { formatoCOP } from "../../utils/Moneda";
 import { addSyncToCart } from "../../redux/actions/actionShoppingCart";
 
 const initialState = {
@@ -110,14 +104,12 @@ const Details = ({ product = initialState }) => {
           <h2 className={styles.card__title}>
             {modal.nombre}
           </h2>
-          {/* <h3>{modal.nombre}</h3> */}
         </div>
         <GrayLightTypographyStyled
           variant="body2"
           component="h2"
           className={styles.flexText}
         >
-          {/* <MarkPrice>${modal.precio}</MarkPrice> */}
           <p>
             <b>Envio Gratis.</b>
           </p>
@@ -162,7 +154,6 @@ const Details = ({ product = initialState }) => {
             {/* Agregar al Carrito <ShoppingCart /> */}
             Agregar al Carrito
           </ButtonPrincipal>
-          {/* <ShoppingCart className={styles.button__rounded} /> */}
         </div>
       </div>
       {/* Card Info */}

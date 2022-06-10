@@ -47,7 +47,7 @@ const Header = () => {
           <img src={closeIcon} alt="close" id="close" />
         </label>
         <div className={styles.nav_options} id="nav_options">
-          <Link onClick={() => handleClose()} to="/">
+          <Link onClick={() => handleClose()} to="/cart">
             <img src={cartIcon} />
           </Link>
           <button onClick={() => dispatch(logoutAsync())}>

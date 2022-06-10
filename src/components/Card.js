@@ -1,7 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { addSyncToCart } from '../redux/actions/actionShoppingCart';
 import styles from '../styled/Card.module.scss'
 import { selectedModal } from '../redux/actions/actionModal';
 
@@ -18,17 +17,17 @@ const Card = ({ product }) => {
   return (
     <div className={styles.card_container}>
       {
-        <div key={product.nombre} className={styles.card}>
-          <img 
-          src={product.image__front} 
-          alt={product.nombre} 
-          onClick={() => enviarDatosModal(product)}
-          />
-          <h1>{product.nombre}</h1>
-          <p>
-            Sabor: <span>{product.sabor}</span>
-          </p>
-          <h2>$ {product.precio}</h2>
+        <div 
+        onClick={() => enviarDatosModal(product)}
+        key={product.nombre} 
+        className={styles.card}>
+          <img src={product.image__front} alt={product.nombre}  />
+          <div className={styles.card_text}>
+            <h1>{product.nombre}</h1>
+            <p> Sabor: <span>{product.sabor}</span></p>
+            <p> Categoria: <span>{product.categoria}</span></p>
+            <h2>$ {product.precio}</h2>
+          </div>
         </div>
       }
     </div>

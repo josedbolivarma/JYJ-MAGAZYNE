@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import styles from "../styled/Filter.module.scss";
 
 const Filter = ({ product, setData, data }) => {
 
@@ -14,7 +15,7 @@ const Filter = ({ product, setData, data }) => {
     }
 
     return (
-        <div>
+        <div className={styles.filter_container}>
             <select onChange={handleChange}>
                 <option value="">All</option>
                 <option value="aumento">Aumento</option>

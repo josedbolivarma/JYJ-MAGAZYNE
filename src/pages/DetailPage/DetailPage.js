@@ -4,11 +4,6 @@ import {
   GrayTitleStyled,
   MarkPrice,
 } from "../../styled/styledcomponents";
-
-//Material UI
-// import DetailsContainer from "../containers/DetailsContainer";
-// import Gallery from "../components/Gallery";
-// import Fade from "react-reveal/Fade";
 import { useSelector } from "react-redux";
 import Details from "../../components/Details/Details";
 import styles from './DetailPage.module.scss';

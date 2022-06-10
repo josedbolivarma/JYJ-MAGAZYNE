@@ -32,7 +32,7 @@ const Home = () => {
                 <Card product={product} />
               </div>
             ))
-            : <div>No hay productos</div>
+            : null
         }
       </div>
     </div>
