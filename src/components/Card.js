@@ -1,16 +1,15 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
-import { listAsync } from '../redux/actions/actionProducts'
+import React from 'react';
+import styles from "../styled/Card.module.scss";
 
 const Card = ({ product }) => {
 
   return (
-    <div>
+    <div className={styles.card_container}>
       {
-        <div key={product.nombre}>
+        <div key={product.nombre} className={styles.card}>
           <img src={product.image__front} alt={product.nombre} />
           <h1>{product.nombre}</h1>
-          <p>{product.sabor}</p>
+          <p>Sabor: <span>{product.sabor}</span></p>
           <h2>$ {product.precio}</h2>
         </div>
       }

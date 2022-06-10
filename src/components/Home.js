@@ -16,7 +16,7 @@ const Home = () => {
   console.log(products);
 
   return (
-    <div>
+    <div className={styles.home_container}>
       {
         products.map(product => (
           <div key={product.nombre}>
