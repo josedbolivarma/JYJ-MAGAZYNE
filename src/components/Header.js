@@ -1,6 +1,10 @@
 import styles from "../styled/NavBar.module.scss";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import closeIcon from "../styled/Images/equis.png";
+import barIcon from "../styled/Images/menu.png";
+import logoutIcon from "../styled/Images/logout.png";
+import cartIcon from "../styled/Images/cart.png";
 
 const Header = () => {
 
@@ -33,19 +37,25 @@ const Header = () => {
     <div className={styles.nav}>
       <nav className={styles.nav_container}>
         <div className={styles.nav_logo}>
-          <h1>E-COMMERCE</h1>
+          <Link to="/"><h1>E-COMMERCE</h1></Link>
         </div>
         <input type="checkbox" id="check" className={styles.nav_menu} />
         <label
           htmlFor="check"
           className={styles.nav_label}
           onClick={() => handleMenu()}>
-          <i className="fa-solid fa-bars" id="bar"></i>
-          <i className="fa-solid fa-xmark" id="close"></i>
+          <img src={barIcon} alt="bar" id="bar" />
+          <img src={closeIcon} alt="close" id="close" />
+
+          {/* <i className="fa-solid fa-bars" id="bar"></i>
+          <i className="fa-solid fa-xmark" id="close"></i> */}
         </label>
         <div className={styles.nav_options} id="nav_options">
           <Link onClick={() => handleClose()} to="/">
-            <i className="fa-solid fa-cart-shopping"></i>
+            <img src={cartIcon} />
+          </Link>
+          <Link onClick={() => handleClose()} to="/">
+            <img src={logoutIcon} />
           </Link>
         </div>
       </nav>

@@ -15,6 +15,10 @@
     display: none;
     cursor: pointer;
 
+    img {
+        width: 30px;
+        height: 30px;
+    }
 
     @media (max-width: 768px) {
         display: block;
@@ -99,4 +103,8 @@
 
 .nav_menu:checked~.nav_options {
     left: 0vw;
+}
+
+a {
+    text-decoration: none;
 }
