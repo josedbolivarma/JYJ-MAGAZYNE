@@ -44,7 +44,9 @@ const Header = () => {
           <i className="fa-solid fa-xmark" id="close"></i>
         </label>
         <div className={styles.nav_options} id="nav_options">
-          <Link onClick={() => handleClose()} to="/">Carrito</Link>
+          <Link onClick={() => handleClose()} to="/">
+            <i className="fa-solid fa-cart-shopping"></i>
+          </Link>
         </div>
       </nav>
     </div>
