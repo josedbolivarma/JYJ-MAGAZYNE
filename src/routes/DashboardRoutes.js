@@ -1,11 +1,10 @@
-import React from 'react'
 import { Navigate } from 'react-router-dom'
 import { Route } from 'react-router-dom'
 import { Routes } from 'react-router-dom'
+import { Details } from '../components/Details'
 import Header from '../components/Header'
+import Home from '../components/Home'
 import Cart from '../pages/Cart/Cart'
-import Home from '../pages/Home'
-import { Products } from '../pages/Products'
 
 const DashboardRoutes = () => {
   return (
@@ -13,8 +12,8 @@ const DashboardRoutes = () => {
       <Header />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/products' element={<Products />} />
         <Route path='/cart' element={<Cart />} />
+        <Route path='/details:id' element={<Details />} />
         <Route path='*' element={<Navigate to='/' />} />
       </Routes>
     </>
