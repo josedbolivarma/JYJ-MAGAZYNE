@@ -17,7 +17,6 @@ export const listSync = () => {
 
 // Delete From Cart
 export const deleteSyncFromCart = (codigo) => {
-    console.log('DELETESYNCFROMCART  ', codigo);
     return {
         type: typesShoppingCart.remove,
         payload: codigo

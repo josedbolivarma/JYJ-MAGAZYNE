@@ -3,7 +3,6 @@ import styles from "../styled/Filter.module.scss";
 
 const Filter = ({ product, setData, data }) => {
 
-    console.log(product)
     const handleChange = (e) => {
         const { value } = e.target
         if (value === "") {

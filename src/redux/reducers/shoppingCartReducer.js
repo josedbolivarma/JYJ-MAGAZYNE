@@ -5,7 +5,6 @@ export const initialState = {
 };
 
 export const shoppingCartReducer = (state = initialState, action) => {
-  console.log(action, state);
   switch (action.type) {
     case typesShoppingCart.add:
       return {
@@ -19,7 +18,6 @@ export const shoppingCartReducer = (state = initialState, action) => {
 
     //
     case typesShoppingCart.remove:
-      console.log("STATE CART Y ACTION CODIGO ", state.cart, action.payload);
       const index = state.cart.findIndex(
         (cartItem) => cartItem.codigo === action.payload
       );
