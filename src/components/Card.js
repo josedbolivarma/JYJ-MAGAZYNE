@@ -1,6 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 const Card = () => {
+
+  useEffect(() => {
+    
+  }, [])
+
   return (
     <div>Card</div>
   )
