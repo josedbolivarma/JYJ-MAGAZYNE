@@ -7,7 +7,13 @@ import { productsReducer } from "../reducers/productsReducer";
 import { modalReducer } from "../reducers/modalReducer";
 import { guardarLocalStorage, obtenerLocalStorage } from "../../utils/LocalStorage";
 
-const composeEnhancers = (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
+import { shoppingCartReducer } from '../reducers/shoppingCartReducer'
+import { productsReducer } from '../reducers/productsReducer'
+import { loginReducers } from '../reducers/loginReducers'
+import { registerReducers } from '../reducers/registerReducers'
+
+const composeEnhancers =
+  (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose
 
 const storageState = obtenerLocalStorage();
 
