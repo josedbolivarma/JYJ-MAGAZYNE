@@ -1,4 +1,5 @@
 import { useDispatch } from "react-redux";
+import Swal from "sweetalert2";
 import { deleteSyncFromCart } from "../../redux/actions/actionShoppingCart";
 import { ButtonPrincipal, MarkPrice1 } from "../../styled/styledcomponents";
 
@@ -10,6 +11,13 @@ const CartProducts = ({ id, image, nombre, precio }) => {
 
   const removeFromCart = () => {
     dispatch(deleteSyncFromCart(id));
+    Swal.fire({
+      title: "Producto eliminado",
+      text: "El producto se ha eliminado del carrito",
+      icon: "success",
+      showConfirmButton: false,
+      timer: 1500,
+    });
   };
 
   return (

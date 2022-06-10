@@ -92,11 +92,11 @@ const Login = () => {
 
         <div className={styles.bar}></div>
 
-        <div className={styles.login_social__btn}>
+        {/* <div className={styles.login_social__btn}>
           <button style={{ backgroundColor: '#db4a39' }} onClick={handleGoogle}>
             <img src={googleIcon} alt='google' />
           </button>
-        </div>
+        </div> */}
 
         <div className={styles.login_change}>
           <h1>
