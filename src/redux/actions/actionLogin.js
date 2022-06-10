@@ -1,69 +1,86 @@
 import { getAuth, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth"
-import { google } from "../../firebase/firebaseConfig"
+import Swal from "sweetalert2"
+import { google } from "../../Firebase/credentials"
+import { typesLogin } from "../types/types"
 
-import { typesLogin } from "../types/types";
 
-    //--------------------Logout----------------------//
 
+//Logout
 export const logoutAsync = () => {
     return (dispatch) => {
-        const auth = getAuth();
-            signOut((auth))
-                .then(({user}) => {
-                    dispatch(logoutSync())
-                    console.log('Adios', user)
-                })
-                .catch(error => {
-                    console.warn(error);
-                })
-                
+        const auth = getAuth()
+        signOut(auth)
+            .then((user) => {
+                dispatch(logoutSync())
+            })
+            .catch(error => {
+                Swal.fire(
+                    'Error',
+                    'No se pudo cerrar sesión',
+                    'error'
+                )
+            })
     }
 }
-
 export const logoutSync = () => {
     return {
         type: typesLogin.logout
     }
 }
 
-//--------------------Login Google--------------------//
+//Login con Google
 export const loginGoogle = () => {
     return (dispatch) => {
-        const auth = getAuth();
+        const auth = getAuth()
         signInWithPopup(auth, google)
-            .then(({user}) => {
-        dispatch(loginSincronico(user.email, user.password))
-          console.log(user, 'Usuario autorizado');
-        })
-        .catch(error => {
-            console.warn(error, 'No autorizado');
-        })
-    }
-}
-
-//--------------------Validar usuario y contraseña--------------------//
-export const loginWithEmailPassAsync = (email, password) => {
-
-    return (dispatch) => {
-        const auth = getAuth();
-            signInWithEmailAndPassword(auth, email, password)
-                .then(({user}) => {
-                    dispatch(loginSincronico(user.email, user.password))
-                    console.log('Usuario autorizado');
-                }) 
-                .catch(error => {
-                    console.warn(error, 'No autorizado');
+            .then(({ user }) => {
+                localStorage.setItem('email', user.email)
+                Swal.fire({
+                    icon: 'success',
+                    title: `Bienvenido ${user.displayName}`,
+                    showConfirmButton: false,
+                    timer: 2500
                 })
+            })
+            .catch(error => {
+                Swal.fire(
+                    'Error',
+                    'Este email ya fue registrado, por favor intente con una cuenta de Google diferente',
+                    'error'
+                )
+            })
     }
 }
 
+//validar usuario y Contraseña
+export const loginEmailPassAsync = (email, password) => {
+    return (dispatch) => {
+        const auth = getAuth()
+        signInWithEmailAndPassword(auth, email, password)
+            .then(({ user }) => {
+                dispatch(loginSincronico(user.email, user.password))
+                Swal.fire({
+                    icon: 'success',
+                    title: `Bienvenido ${user.displayName}`,
+                    showConfirmButton: false,
+                    timer: 2500
+                })
+            })
+            .catch(error => {
+                Swal.fire(
+                    'Error',
+                    'Usuario existente o contraseña incorrecta',
+                    'error'
+                )
+            })
 
+    }
+}
 export const loginSincronico = (email, password) => {
     return {
         type: typesLogin.login,
         payload: {
-            email,
-            password
+            email, password
         }
     }
 }
