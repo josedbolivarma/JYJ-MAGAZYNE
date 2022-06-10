@@ -7,30 +7,29 @@ import logoutIcon from "../styled/Images/logout.png";
 import cartIcon from "../styled/Images/cart.png";
 
 const Header = () => {
-
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
 
   const handleMenu = () => {
-    const bar = document.getElementById("bar");
-    const close = document.getElementById("close");
-    setIsOpen(!isOpen);
+    const bar = document.getElementById('bar')
+    const close = document.getElementById('close')
+    setIsOpen(!isOpen)
     if (isOpen) {
-      bar.style.display = "none";
-      close.style.display = "block";
+      bar.style.display = 'none'
+      close.style.display = 'block'
     } else if (isOpen === false) {
-      bar.style.display = "block";
-      close.style.display = "none";
+      bar.style.display = 'block'
+      close.style.display = 'none'
     }
   }
 
   const handleClose = () => {
-    handleMenu();
-    document.getElementById("check").click();
+    handleMenu()
+    document.getElementById('check').click()
   }
 
   useEffect(() => {
-    handleMenu();
-    document.getElementById("close").style.display = "none";
+    handleMenu()
+    document.getElementById('close').style.display = 'none'
   }, [])
 
   return (
@@ -57,6 +56,7 @@ const Header = () => {
           <Link onClick={() => handleClose()} to="/">
             <img src={logoutIcon} />
           </Link>
+          <button>Sing Out</button>
         </div>
       </nav>
     </div>
