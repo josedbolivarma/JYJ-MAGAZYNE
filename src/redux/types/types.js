@@ -17,3 +17,7 @@ export const typesShoppingCart = {
     remove: 'remove [SHOPPING CART]',
     list: 'get [SHOPPING CART]'
 }
+
+export const typesModal = {
+    selected: 'selected [MODAL]'
+}
