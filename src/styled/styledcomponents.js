@@ -29,3 +29,9 @@ export const DarkTypographyStyled = styled.h2`
   color: #5C5C5C;
   font-size: 1.1rem;
 `;
+
+export const MarkPrice1 = styled.p`
+  color: green;
+  font-size: 1.2rem;
+  font-weight: 400;
+`;
