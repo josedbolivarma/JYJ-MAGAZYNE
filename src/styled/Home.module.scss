@@ -1,7 +1,8 @@
 .home_container {
-    border: 2px solid red;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: wrap;
+    .home_container__card {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+    }
 }
