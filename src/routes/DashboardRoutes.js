@@ -2,10 +2,10 @@ import React from 'react'
 import { Navigate } from 'react-router-dom'
 import { Route } from 'react-router-dom'
 import { Routes } from 'react-router-dom'
-import Card from '../components/Card'
 import Header from '../components/Header'
+import Home from '../components/Home'
 import Cart from '../pages/Cart/Cart'
-import Home from '../pages/Home'
+
 
 const DashboardRoutes = () => {
   return (
