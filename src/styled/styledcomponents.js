@@ -35,3 +35,16 @@ export const MarkPrice1 = styled.p`
   font-size: 1.2rem;
   font-weight: 400;
 `;
+
+export const MarkPrice = styled.p`
+  color: red;
+  font-size: 1.2rem;
+  font-weight: 400;
+`;
+
+
+export const GrayTitleStyled = styled.h2`
+  color: darkgray;
+  font-size: 2.8rem;
+  font-weight: 750;
+`;

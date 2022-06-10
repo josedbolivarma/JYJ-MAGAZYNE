@@ -47,6 +47,7 @@ const Header = () => {
           <Link onClick={() => handleClose()} to="/">
             <i className="fa-solid fa-cart-shopping"></i>
           </Link>
+        
         </div>
       </nav>
     </div>
