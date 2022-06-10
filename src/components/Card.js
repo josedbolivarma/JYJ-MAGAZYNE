@@ -18,7 +18,10 @@ const Card = () => {
       {
         products.map(product => (
           <div key={product.nombre}>
+            <img src={product.image__front} alt={product.nombre} />
             <h1>{product.nombre}</h1>
+            <p>{product.sabor}</p>
+            <h2>$ {product.precio}</h2>
           </div>
         ))
       }
