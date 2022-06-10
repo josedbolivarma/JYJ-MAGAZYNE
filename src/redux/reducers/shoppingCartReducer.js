@@ -5,7 +5,7 @@ export const initialState = {
 };
 
 export const shoppingCartReducer = (state = initialState, action) => {
-  
+  console.log(action, state);
   switch (action.type) {
     case typesShoppingCart.add:
       return {

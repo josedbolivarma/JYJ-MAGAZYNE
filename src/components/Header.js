@@ -53,9 +53,7 @@ const Header = () => {
           <Link onClick={() => handleClose()} to="/">
             <img src={cartIcon} />
           </Link>
-          <Link onClick={() => handleClose()} to="/">
-            <img src={logoutIcon} />
-          </Link>
+
           <button>Sing Out</button>
         </div>
       </nav>
