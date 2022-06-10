@@ -8,9 +8,12 @@ const Card = ({ product }) => {
       {
         <div key={product.nombre} className={styles.card}>
           <img src={product.image__front} alt={product.nombre} />
-          <h1>{product.nombre}</h1>
-          <p>Sabor: <span>{product.sabor}</span></p>
-          <h2>$ {product.precio}</h2>
+          <div className={styles.card_text}>
+            <h1>{product.nombre}</h1>
+            <p>Sabor: <span>{product.sabor}</span></p>
+            <p>Categoria: {product.categoria}</p>
+            <h2>$ {product.precio}</h2>
+          </div>
         </div>
       }
     </div>
