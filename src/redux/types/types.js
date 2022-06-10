@@ -7,3 +7,19 @@ export const typesLogin ={
 export const typesRegister ={
     register: 'register'
 }
+
+export const typesProductos ={
+    add: 'add',
+    list: 'list',
+    edit: 'edit',
+    delete: 'delete',
+    detail: 'detail',
+    search : 'search',
+    addFormik: 'addFormik'
+}
+
+export const typesShoppingCart = {
+    add: 'add [SHOPPING CART]',
+    remove: 'remove [SHOPPING CART]',
+    list: 'get [SHOPPING CART]'
+}
