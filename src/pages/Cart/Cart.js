@@ -6,8 +6,12 @@ import {
   ButtonPrincipal
  } from '../../styled/styledcomponents';
 import Subtotal from '../../components/Subtotal/Subtotal';
+import { useSelector } from 'react-redux';
+import CartProducts from '../../components/CartProducts/CartProducts';
 
 const Cart = () => {
+  const { cart } = useSelector((store) => store.cart);
+
   return (
     <div className={styles.cart}>
     <div className={styles.cart__container}>
@@ -21,7 +25,7 @@ const Cart = () => {
          
         </div>
 
-        {/* {cart.map((item, index) => (
+        {cart.map((item, index) => (
           <CartProducts
             key={index}
             id={item.codigo}
@@ -29,7 +33,7 @@ const Cart = () => {
             image={item.image__front}
             precio={item.precio}
           />
-        ))} */}
+        ))}
       </div>
       <div className={styles.cart__containerTitle}>
         {/* <GrayTitleStyled1>Subtotal: {formatoCOP.format(getCartTotal(cart))} </GrayTitleStyled1> */}
