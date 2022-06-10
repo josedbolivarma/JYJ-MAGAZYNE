@@ -7,14 +7,17 @@ import Home from '../components/Home'
 import Cart from '../pages/Cart/Cart'
 
 
+
 const DashboardRoutes = () => {
   return (
     <>
       <Header />
       <Routes>
+
         <Route path="/" element={<Home />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="*" element={<Navigate to='/' />} />
+
       </Routes>
     </>
   )
